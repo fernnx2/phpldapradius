@@ -1,7 +1,6 @@
 <?php
 include "../header.php";
 include "sessioncookie.php";
-session_start();
 
 if(!isset($_COOKIE['user'])  || !isset($_COOKIE['password'])){
 //unset($_COOKIE['user']);

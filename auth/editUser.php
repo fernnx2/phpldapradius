@@ -1,7 +1,6 @@
 <?php
 include "../header.php";
 include "sessioncookie.php";
-session_start();
 
 if(isset($_POST['uid']) && isset($_POST['nombre']) && isset($_POST['apellido'])){
 	if(isset($_SESSION['user'])){
