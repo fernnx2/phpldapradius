@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$cwd=getcwd();
 if(isset($_SESSION['user'])){
 	 $ldapconn = ldap_connect($_SESSION['config']['urlLdapWrite']) or die("Could not connect to LDAP server.");
 	ldap_set_option($ldapconn, LDAP_OPT_PROTOCOL_VERSION, 3);
@@ -11,6 +11,7 @@ if(isset($_SESSION['user'])){
 
 }
 	ldap_close($ldapconn);
+	shell_exec("rm -R ".$cwd."/cert/certs/".$_GET['uid']);
 	header("location:dashboard.php");
 }
 else{
