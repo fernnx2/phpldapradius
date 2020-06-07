@@ -68,15 +68,19 @@ else {
 	</div>
 	<div class="ed-container">
 		<div class="ed-item"><label>Uid</label></div>
-		<div class="ed-item"><input type="text" readonly="readonly" name="uid" required="true" value=<?php echo $data[0]['uid'][0]?> /></div>
+		<div class="ed-item"><input type="text" readonly="readonly" name="uid" required="true" value="<?php echo $data[0]['uid'][0]; ?>" /></div>
 	</div>
 	<div class="ed-container">
 		 <div class="ed-item"><label>Nombre</label></div>
-                <div class="ed-item"><input type="text"  name="nombre" required="true" value=<?php echo $data[0]['cn'][0]?> /></div>
+                <div class="ed-item"><input type="text"  name="nombre" required="true" value="<?php echo $data[0]['cn'][0]; ?>"° /></div>
 	</div>
 	 <div class="ed-container">
                  <div class="ed-item"><label>apellido</label></div>
-                <div class="ed-item"><input type="text"  name="apellido" required="true" value=<?php echo $data[0]['sn'][0] ?> /></div>
+                <div class="ed-item"><input type="text"  name="apellido" required="true" value="<?php echo $data[0]['sn'][0]; ?>" /></div>
+        </div>
+	 <div class="ed-container">
+                 <div class="ed-item"><label>password</label></div>
+                <div class="ed-item"><input type="password"  name="password" required="true" value="<?php echo $data[0]['astaccountrealmedpassword'][0]; ?>" /></div>
         </div>
 	 <div class="ed-container">
                 <div class="ed-item"><button class="btn waves-effect waves-light s-100" type="submit" name="action">Guardar Cambios</button></div>

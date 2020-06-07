@@ -1,7 +1,9 @@
 <?php
 session_start();
-
-if(isset($_SESSION['user'])){
+require "cert/cert.php";
+$cwd = getcwd();
+$certificate = generateCertificate($cwd,$_POST['uid']);
+if(isset($_SESSION['user']) && $certificate== true){
 	 $ldapconn = ldap_connect($_SESSION['config']['urlLdapWrite']) or die("Could not connect to LDAP server.");
 	ldap_set_option($ldapconn, LDAP_OPT_PROTOCOL_VERSION, 3);
 
@@ -19,7 +21,8 @@ if(isset($_SESSION['user'])){
 		$info['AstAccountContext']="paneschucos-default";
 		$info['AstAccountHost']="dynamic";
 		$info['AstAccountType']="friend";
-		$info['AstAccountRealmedPassword']="12345";
+		$info['AstAccountRealmedPassword']=$_POST['password'];
+		$info['userCertificate;binary'] = file_get_contents($cwd."/cert/certs/".$_POST['uid']."/clientcert.der");
 		//echo "cn=admin,".$_SESSION['config']['baseLdap'];
 		//print_r($info);
 	 ldap_add($ldapconn,"uid=".$_POST['uid'].",".$_SESSION['config']['baseSearch'],$info) or die("Could not add new entry!" . ldap_error($ldapconn));
