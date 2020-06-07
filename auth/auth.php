@@ -6,6 +6,7 @@ function auth($user,$password,$type){
 
 $config['version'] = '3.0';
 $config['urlLdap'] = 'ldap://172.17.0.5:389';
+$config['urlLdapWrite'] = 'ldap://172.17.0.6:389';
 $config['baseLdap'] = 'dc=paneschucos,dc=occ,dc=ues,dc=edu,dc=sv';
 $config['usernameConsultaLdap'] = 'cn='.$user.',dc=paneschucos,dc=occ,dc=ues,dc=edu,dc=sv';
 $config['passwordConsultaLdap'] = $password;
