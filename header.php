@@ -2,8 +2,8 @@
 <html>
         <head>
         <title>Login</title>
-        <link rel="stylesheet" type="text/css" href="/phpl-dap-asterisk/assets/css/ed-grid.css"/>
-	<link rel="stylesheet" type="text/css" href="/phpl-dap-asterisk/assets/css/materialize.css" />
+        <link rel="stylesheet" type="text/css" href="/assets/css/ed-grid.css"/>
+	<link rel="stylesheet" type="text/css" href="/assets/css/materialize.css" />
         </head>
 
         <body>
