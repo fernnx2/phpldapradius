@@ -2,8 +2,8 @@
 session_start();
 require "cert/cert.php";
 $cwd = getcwd();
-$urlcacert="cert/caPeriquito/cacert.pem";
-$urlcacertkey="cert/caPeriquito/cakey.key";
+$urlcacert="cert/ca/cacert.pem";
+$urlcacertkey="cert/ca/cakey.key";
 $certificate = generateCertificate($cwd,$_POST['uid'],$urlcacert,$urlcacertkey);
 if(isset($_SESSION['user']) && $certificate== true){
 	 $ldapconn = ldap_connect($_SESSION['config']['urlLdapWrite']) or die("Could not connect to LDAP server.");
