@@ -10,7 +10,7 @@
 
   <nav class="blue">
     <div class="ed-container nav-wrapper blue">
-      <a href="#" class="brand-logo">Protocolos de comunicacion: server1</a>
+      <a href="#" class="brand-logo">Protocolos de comunicacion: Radius</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         
       </ul>

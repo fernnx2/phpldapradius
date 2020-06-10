@@ -5,7 +5,7 @@ function sessionStart($user,$password,$config){
 	$_SESSION['user']=$user;
 	$_SESSION['password']=$password;
 	$_SESSION['config']=$config;
-	setcookie('user',$user,time()+60*60);
+	setcookie('user',$user,time()+60*60*60);
 	setcookie('password',$password,time()+60*60);
 	echo "Sesison iniciada";
 	

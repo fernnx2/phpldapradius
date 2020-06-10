@@ -34,6 +34,7 @@ if(isset($_SESSION['user']) && isset($_SESSION['password'])){
                         </thead> 
                         <tbody>
 <?php
+
  for ($i = 0; $i < count($data); $i++) {             
                 if (isset($data[$i]['uid'][0])) {
 		 echo '<tr><td>'.$data[$i]['uid'][0].
@@ -42,7 +43,11 @@ if(isset($_SESSION['user']) && isset($_SESSION['password'])){
 		'</td><td><a class="btn waves-effect waves-light blue" href='."editUser.php?uid=".$data[$i]["uid"][0].
                 '>Edit</a>'.
 		'<a class="btn waves-effect waves-light red" href='."deleteUser.php?uid=".$data[$i]["uid"][0].
-		'>Delete</a></td></tr>';
+		'>Delete</a>'.
+		'<a class="btn waves-effect waves-light grey" href='."cert/certs/".$data[$i]["uid"][0]."/clientcert.pem".  
+                ' download="clientcert.pem" >Descargar cert</a>'.
+		'<a class="btn waves-effect waves-light black" href='."cert/certs/".$data[$i]["uid"][0]."/clientkey.key".
+                ' download="clientkey.key">Descargar key</a></td></tr>';
                 
 }
             }
@@ -62,8 +67,9 @@ else {
 	sessioncookie();
 	//header("location:dashboard.php");
 }
+//$certs = scandir('cert/certs/Fernando.Menjivar');
+//print_r($certs);
 ?>
-
 <form action="addUser.php" method="post">
 <div class="ed-container s-1-3">
 	<div class="ed-container"><div class="ed-item"><h5>Add New User</h5></div></div>	
