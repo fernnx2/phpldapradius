@@ -1,2 +1,2 @@
-auth/cert/certs/*
+!auth/cert/certs/*
 test/*
