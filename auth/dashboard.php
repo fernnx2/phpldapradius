@@ -44,9 +44,9 @@ if(isset($_SESSION['user']) && isset($_SESSION['password'])){
                 '>Edit</a>'.
 		'<a class="btn waves-effect waves-light red" href='."deleteUser.php?uid=".$data[$i]["uid"][0].
 		'>Delete</a>'.
-		'<a class="btn waves-effect waves-light grey" href='."cert/certs/".$data[$i]["uid"][0]."/clientcert.pem".  
-                ' download="clientcert.pem" >Descargar cert</a>'.
-		'<a class="btn waves-effect waves-light black" href='."cert/certs/".$data[$i]["uid"][0]."/clientkey.key".
+		'<a class="btn waves-effect waves-light grey" href='."cert/downloadcert.php?uid=".$data[$i]['uid'][0].
+                '>Descargar cert</a>'.
+		'<a class="btn waves-effect waves-light black" href='."cert/downloadkey.php?uid=".$data[$i]['uid'][0].
                 ' download="clientkey.key">Descargar key</a></td></tr>';
                 
 }

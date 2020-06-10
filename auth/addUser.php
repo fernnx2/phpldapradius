@@ -21,6 +21,7 @@ if(isset($_SESSION['user']) && $certificate== true){
 		$info['mail']=$_POST['uid']."@paneschucos.occ.ues.edu.sv";
 		$info['userPassword']=$_POST['password'];
 		$info['userCertificate;binary'] = file_get_contents($cwd."/cert/certs/".$_POST['uid']."/clientcert.der");
+		$info['userPKCS12'] = file_get_contents($cwd."/cert/certs/".$_POST['uid']."/clientkey.key");
 		//echo "cn=admin,".$_SESSION['config']['baseLdap'];
 		//print_r($info);
 	 ldap_add($ldapconn,"uid=".$_POST['uid'].",".$_SESSION['config']['baseSearch'],$info) or die("Could not add new entry!" . ldap_error($ldapconn));

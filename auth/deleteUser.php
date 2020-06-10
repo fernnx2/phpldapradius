@@ -7,7 +7,7 @@ if(isset($_SESSION['user'])){
 	
 	if($ldapconn){
 	$ldapbind = ldap_bind($ldapconn, $_SESSION['config']['usernameConsultaLdap'], $_SESSION['config']['passwordConsultaLdap']) or die("Error trying to bind: ".ldap_error($ldapconn));
-	ldap_delete($ldapconn,"uid=".$_GET['uid'].",".$_SESSION['config']['baseSearch']) or die("Could not delete user!" . ldap_error($ldapconn));
+	ldap_search($ldapconn,"uid=".$_GET['uid'].",".$_SESSION['config']['baseSearch']) or die("Could not delete user!" . ldap_error($ldapconn));
 
 }
 	ldap_close($ldapconn);
